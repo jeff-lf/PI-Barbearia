@@ -21,5 +21,5 @@ pip install -r requirements.txt
 ```bash
 git pull origin main
 python manage.py migrate
-python python manage.py runserver
+python manage.py runserver
 ```
