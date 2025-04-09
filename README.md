@@ -9,8 +9,10 @@
 ```bash
 git clone https://github.com/jeff-lf/PI-Barbearia.git
 cd PI-Barbearia
+cd barbearia
 python -m venv venv
 venv\Scripts\activate  # no Windows
+pip install -r requirements.txt
 ```
 
 ## SEMPRE ANTES DE INICIALIZAR
