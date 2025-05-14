@@ -1,0 +1,20 @@
+<!-- core/templates/core/agendamentos.html -->
+{% extends 'core/base.html' %}
+
+{% block title %}Meus Agendamentos{% endblock %}
+
+{% block content %}
+    <h2>Meus Agendamentos</h2>
+    {% if agendamentos %}
+        <ul>
+            {% for agendamento in agendamentos %}
+                <li>
+                    <strong>Serviço:</strong> {{ agendamento.servico.nome }}<br>
+                    <strong>Data e Hora:</strong> {{ agendamento.data_hora|date:"d/m/Y H:i" }}
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Você não tem agendamentos.</p>
+    {% endif %}
+{% endblock %}

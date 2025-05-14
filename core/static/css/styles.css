@@ -1,0 +1,317 @@
+/* Variáveis de cor */
+:root {
+    --primary: #2b2d42;
+    --secondary: #8d99ae;
+    --accent: #ef233c;
+    --light: #edf2f4;
+    --dark: #1a1a2e;
+}
+
+/* Reset e estilos base */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    color: var(--dark);
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+/* Estrutura do Layout */
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Viewport Height */
+    margin: 0;
+}
+
+main {
+    flex: 1; /* Ocupa todo o espaço disponível */
+    padding-top: 70px; /* Compensa o header fixo */
+}
+
+.main-footer {
+    margin-top: auto; /* Empurra o footer para baixo */
+    background-color: var(--primary);   
+    color: var(--light);
+}
+
+/* Header */
+.main-header {
+    background-color: var(--primary);
+    color: white;
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.8rem;
+    margin: 0;
+    display: inline-block;
+}
+
+.logo span {
+    color: var(--accent);
+}
+
+.main-nav {
+    display: inline-block;
+    float: right;
+}
+
+.main-nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 1.5rem;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.main-nav a:hover {
+    color: var(--accent);
+}
+
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .cta-buttons {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .btn {
+        margin: 0.5rem 0;
+        width: 80%;
+        margin: 0.5rem auto;
+    }
+}
+
+
+/* --- Estilos para Página de Serviços --- */
+
+.service-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem 0;
+    list-style: none;
+    margin: 0;
+}
+
+.service-card {
+    background: white;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border-left: 4px solid var(--accent);
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.service-card h3 {
+    color: var(--primary);
+    margin-top: 0;
+    font-size: 1.5rem;
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.service-card h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background-color: var(--accent);
+}
+
+.service-description {
+    color: var(--secondary);
+    margin: 1rem 0;
+    line-height: 1.6;
+}
+
+.service-price {
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 1.2rem;
+    margin: 1rem 0 0;
+    display: flex;
+    align-items: center;
+}
+
+.service-price::before {
+    content: '•';
+    margin-right: 0.5rem;
+    color: var(--primary);
+}
+
+/* Botão de Agendamento */
+.btn-agendar {
+    display: inline-block;
+    background-color: var(--accent);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 1rem;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.btn-agendar:hover {
+    background-color: var(--primary);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .service-list {
+        grid-template-columns: 1fr;
+    }
+    
+    .service-card {
+        padding: 1rem;
+    }
+}
+
+/* Efeito de destaque */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.03); }
+    100% { transform: scale(1); }
+}
+
+.service-card:hover {
+    animation: pulse 0.5s ease;
+}
+
+/* Badge de popular */
+.popular-badge {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: var(--accent);
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+
+/* --- Estilos para Página de Agendamento --- */
+.agendamento-container {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.agendamento-title {
+    color: var(--primary);
+    text-align: center;
+    margin-bottom: 2rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+.agendamento-form {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    font-weight: 500;
+    color: var(--primary);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: 'Roboto', sans-serif;
+    transition: border 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 2px rgba(239, 35, 60, 0.2);
+}
+
+.btn-agendar {
+    background-color: var(--accent);
+    color: white;
+    border: none;
+    padding: 1rem;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin-top: 1rem;
+}
+
+.btn-agendar:hover {
+    background-color: var(--primary);
+}
+
+/* Estilizando o calendário/datepicker */
+input[type="date"],
+input[type="time"] {
+    padding: 0.8rem;
+}
+
+/* Mensagens de erro */
+.errorlist {
+    color: var(--accent);
+    margin: 0;
+    padding-left: 1.2rem;
+    font-size: 0.9rem;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .agendamento-container {
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+}
+
+.form-group select {
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 0.8rem center;
+    background-size: 1rem;
+}

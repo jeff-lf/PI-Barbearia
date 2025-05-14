@@ -1,0 +1,23 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Serviços{% endblock %}
+
+{% block content %}
+<section class="services-section">
+    <div class="container">
+        <h2 class="section-title">Nossos Serviços</h2>
+        <p class="section-subtitle">Conheça nossos serviços especializados</p>
+        
+        <div class="service-list">
+            {% for servico in servicos %}
+            <div class="service-card">
+                <h3>{{ servico.nome }}</h3>
+                <p class="service-description">{{ servico.descricao }}</p>
+                <p class="service-price">R$ {{ servico.preco }}</p>
+                <a href="{% url 'agendar' %}?servico={{ servico.id }}" class="btn-agendar">Agendar</a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}
